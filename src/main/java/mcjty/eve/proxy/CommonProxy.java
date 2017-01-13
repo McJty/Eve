@@ -3,23 +3,20 @@ package mcjty.eve.proxy;
 import com.google.common.util.concurrent.ListenableFuture;
 import mcjty.eve.ForgeEventHandlers;
 import mcjty.eve.ModEntities;
+import mcjty.eve.config.ConfigSetup;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.nbt.NBTBase;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.network.NetworkRegistry;
 
 import java.util.concurrent.Callable;
 
 public class CommonProxy {
     public void preInit(FMLPreInitializationEvent e) {
         //PacketHandler.registerMessages("eve");
+        ConfigSetup.preInit(e);
         ModEntities.init();
     }
 
@@ -28,6 +25,7 @@ public class CommonProxy {
     }
 
     public void postInit(FMLPostInitializationEvent e) {
+        ConfigSetup.postInit();
     }
 
     public World getClientWorld() {

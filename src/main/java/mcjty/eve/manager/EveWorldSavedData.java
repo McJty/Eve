@@ -38,7 +38,7 @@ public class EveWorldSavedData extends WorldSavedData {
         return instance;
     }
 
-    public EveData getData(World world) {
+    public static EveData getData(World world) {
         return getEveData(world).getData();
     }
 
