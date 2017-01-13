@@ -1,6 +1,7 @@
 package mcjty.eve.proxy;
 
 import com.google.common.util.concurrent.ListenableFuture;
+import mcjty.eve.ForgeEventHandlers;
 import mcjty.eve.ModEntities;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTBase;
@@ -23,7 +24,7 @@ public class CommonProxy {
     }
 
     public void init(FMLInitializationEvent e) {
-//        MinecraftForge.EVENT_BUS.register(new ForgeEventHandlers());
+        MinecraftForge.EVENT_BUS.register(new ForgeEventHandlers());
     }
 
     public void postInit(FMLPostInitializationEvent e) {

@@ -1,12 +1,14 @@
 package mcjty.eve;
 
 
+import mcjty.eve.manager.EveWorldSavedData;
 import mcjty.eve.proxy.CommonProxy;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLServerStoppedEvent;
 import org.apache.logging.log4j.Logger;
 
 @Mod(modid = Eve.MODID, name = Eve.MODNAME,
@@ -50,4 +52,10 @@ public class Eve {
     public void postInit(FMLPostInitializationEvent e) {
         proxy.postInit(e);
     }
+
+    @Mod.EventHandler
+    public void serverStopped(FMLServerStoppedEvent event) {
+        EveWorldSavedData.clearInstance();
+    }
+
 }
