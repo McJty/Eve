@@ -1,0 +1,15 @@
+[
+{
+  "modid": "eve",
+  "name": "Eve",
+  "description": "The Mystery of Eve",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["McJty"],
+  "credits": "McJty",
+  "logoFile": "",
+  "screenshots": []
+}
+]
