@@ -1,6 +1,7 @@
 package mcjty.eve.proxy;
 
 import com.google.common.util.concurrent.ListenableFuture;
+import mcjty.eve.ModEntities;
 import mcjty.lib.tools.MinecraftTools;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
@@ -18,6 +19,7 @@ public class ClientProxy extends CommonProxy {
 
 //        MinecraftForge.EVENT_BUS.register(new ClientForgeEventHandlers());
 //        OBJLoader.INSTANCE.addDomain(ImmersiveCraft.MODID);
+        ModEntities.initModels();
     }
 
     @Override
